@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+editor="tilde"
+
+header="#!/usr/bin/env bash
+#----------------------------------------------------------------------------
+#Script     :
+#Versão     :
+#Descrição  :
+#Autor      :
+#Data       :
+#Licença    :
+#----------------------------------------------------------------------------
+#Uso:
+#----------------------------------------------------------------------------
+"
+
+[[$# -eq 0]] && echo "É necessário informar um nome de arquivo" && exit 1
+[[$# -gt 1]] && echo "É necessário informar um nome de arquivo" && exit 1
+
+
+[[-f $1]] && echo "Já existe arquivo com mesmo nome nessa pasta" && exit 1
+
+echo "$header" > $1
+chmod +x $1
+$editor $1
+
+exit 0

@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+#----------------------------------------------------------------
+#Script     : check_PID
+#Versão     : 1.0
+#Descrição  : Compara PID do script e do shell no terminal
+#Autor      : Wellington Rocha <wellington.rocha@luizalabs.com>
+#Data       : 05/09/2010
+#Licença    : NGU/GPL v3.0
+#----------------------------------------------------------------
+#Uso: ./check_PID
+#----------------------------------------------------------------
+
+clear
+
+echo "
+PID da sessão do bash do script: $$
+PID da sessão do bash no terminal: $PPID
+"
