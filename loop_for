@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+#----------------------------------------------------------------------------
+#Script     : Loop for
+#Versão     : 1.0
+#Descrição  : Maneiras de escrever e usar o loop for
+#Autor      : Wellington Rocha
+#Data       : 15/09/2023
+#Licença    :
+#----------------------------------------------------------------------------
+#Uso: Somente observações de estudo
+#----------------------------------------------------------------------------
+
+#Escrevendo um contador até 10
+
+for n in {1..10}; do
+echo $n
+done
+
+
+echo
+#Escrevendo um contador até 10 com passo 2
+
+for n in {1..10..2}; do
+echo $n
+done
+
+echo
+#Escrevendo um looping de letras em sequência e redirecianando a saída para um arquivo
+
+for n in {a..c}{a..c}{1..10..2}; do
+echo $n |& tee -a list.txt
+done
+
+echo
+#Percorrendo um array
+
+alunos=(Wellington Simoni Maria_Luísa)
+
+for i in ${!alunos[@]}; do
+echo "Aluno $i --> ${alunos[$i]}"
+done
