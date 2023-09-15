@@ -1,0 +1,73 @@
+#!/usr/bin/env bash
+#----------------------------------------------------------------------------
+#Script     : Usos dos loops while,until e select
+#Versão     : 1.0
+#Descrição  : Exemplos de uso de loops
+#Autor      : Wellington Rocha
+#Data       : 15/09/2023
+#Licença    :
+#----------------------------------------------------------------------------
+#Uso: Somente casos de uso para estudo
+#----------------------------------------------------------------------------
+
+#while
+
+n=0
+
+while [[ $n -lt 5 ]]; do
+ echo $n
+ ((n++))
+done
+
+echo
+
+#until
+
+n=0
+
+until false; do
+ [[ $n -lt 5 ]] && echo $n || break
+ ((n++))
+ done
+ 
+ echo
+ 
+ #select
+ 
+ frutas=(banana laranja maçã abacate)
+ 
+ PS3=$'\nEscolha sua fruta: '
+ select fruta in "${frutas[@]}"; do
+  echo $'\nVocê escolheu' $fruta $'\n\n'
+  break
+ done
+ 
+ #menu com while
+ 
+ 
+ while true; do
+ 
+  clear
+ 
+  echo "1. Banana"
+  echo "2. Laranja"
+  echo "3. Maçã"
+  echo "4. Abacate"
+  echo "5. Sair"
+  echo
+  
+  read -p "Escolha o número de sua opção: " opt
+
+  [[ $opt -eq 5 ]] && break
+  
+  echo
+  echo "Você escolheu ${frutas[$(( $opt - 1 ))]}."
+  
+  echo 
+  read -p "Tecle enter para continuar ..." continua 
+  
+ done 
+  
+  echo
+  read -p "Tecle enter para finalizar ..." finalizar
+  
