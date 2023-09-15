@@ -16,8 +16,10 @@
  nome_caixa_alta="WELLINGTON"
  sobrenome="Rocha"
  apelido="Valor"
- frutas=(banana maçã pera)
+ frutas=(banana maçã pêra)
  endereco="https://www.google.com/arquivo.zip"
+ mensagem="hoje vou comer uma fruta"
+ mensagem_cifrada="DepósitosDeEquipamentosDeTecnologia"
 
 echo $nome ${sobrenome}
 
@@ -72,3 +74,9 @@ echo "O protocolo é:" ${endereco%://*}
 
 #${variavel%%padrao} --> Apaga toda a string após a ocorrência do padrão
 echo "O protocolo é:" ${endereco%%://*}
+
+#${variavel/padrao/string} --> substitui a primeira ocorrência de 'padrão' por 'string'
+echo ${mensagem/fruta/${frutas[2]}}
+
+#${variavel//padrao/string} --> substitui todas as ocorrências de 'padrão' por 'string'
+echo ${mensagem_cifrada//e/3}
