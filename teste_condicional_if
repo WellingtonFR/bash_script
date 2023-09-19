@@ -1,0 +1,65 @@
+#!/usr/bin/env bash
+#----------------------------------------------------------------------------
+#Script     : Teste condicional if e case
+#Versão     : 1.0	
+#Descrição  : Casos de uso do teste condicionais no bash
+#Autor      : Wellington Rocha
+#Data       : 19/09/2023
+#Licença    :
+#----------------------------------------------------------------------------
+#Uso: Somente casos de uso para estudo
+#----------------------------------------------------------------------------
+
+# test serve para testar condições
+# if serve para testar comandos
+
+if  ls *.txt &> /dev/null; then
+ echo "Status $? - Verdadeiro"
+elif ls *.txt &> /dev/null; then
+ echo "Encontrei o arquivo teste*"
+else
+ echo "Status $? - Nenhum arquivo encontrado"
+ exit 1
+fi
+
+
+echo
+
+#teste de valor de váriavel
+fruta=Limão
+
+if [[ $fruta = banana ]]; then
+ echo "O valor correspondente a váriavel fruta não foi encontrado, valor encontrado $fruta"
+else
+ echo "O valor corresponde, o valor é $fruta"
+fi
+
+echo
+
+#teste de retorno de expressão aritmética
+#retorna falso se o valor for 0 e verdadeira se for diferente de 0
+teste=1
+
+if((teste)) &> /dev/null; then
+ echo "Status $? - Verdadeiro"
+else
+ echo "Status $? - Falso"
+fi
+
+echo "O valor de teste é $teste"
+
+echo
+
+#usos de case
+
+fruta=$1
+
+case ${fruta,,} in # o ,, transforma os caracteres recebidos em minúscula
+  [Bb]anana|laranja) echo "$fruta é uma fruta amarela"           ;;
+  abacate|limão) echo "$fruta é uma fruta verde"               ;;
+  morang[ao]|maçã) echo "$fruta é uma fruta vermelha"             ;;
+        *) echo "Valor nulo, não é possível determinar a cor"  ;;
+esac
+
+
+exit 0
