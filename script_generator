@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-editor="tilde"
-
 header="#!/usr/bin/env bash
 #----------------------------------------------------------------------------
 #Script     :
@@ -14,6 +12,8 @@ header="#!/usr/bin/env bash
 #Uso:
 #----------------------------------------------------------------------------
 "
+
+editor="tilde"
 
 [[$# -eq 0]] && echo "É necessário informar um nome de arquivo" && exit 1
 [[$# -gt 1]] && echo "É necessário informar um nome de arquivo" && exit 1

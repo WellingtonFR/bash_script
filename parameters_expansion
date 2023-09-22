@@ -1,82 +1,12 @@
 #!/usr/bin/env bash
 #----------------------------------------------------------------------------
-#Script     : Expansões de parâmetros
-#Versão     : 1.0
-#Descrição  : Observações sobre expansões do shell
-#Autor      : Wellington Rocha
-#Data       : 14/09/2023
-#Licença    : 
+#Script     :
+#Versão     :
+#Descrição  :
+#Autor      :
+#Data       :
+#Licença    :
 #----------------------------------------------------------------------------
-#Uso:Somente observações de estudo
+#Uso:
 #----------------------------------------------------------------------------
 
-#$variavel ou ${variavel} --> expande para o valor da variavel
-
- nome="wellington"
- nome_caixa_alta="WELLINGTON"
- sobrenome="Rocha"
- apelido="Valor"
- frutas=(banana maçã pêra)
- endereco="https://www.google.com/arquivo.zip"
- mensagem="hoje vou comer uma fruta"
- mensagem_cifrada="DepósitosDeEquipamentosDeTecnologia"
-
-echo $nome ${sobrenome}
-
-#${array_name[indice]} --> expande o indice do array
-echo "A fruta no índice 1 é" ${frutas[1]}
-
-#${array_name[*]} --> expande para os valores de todos os elementos do array
-echo "Esse são os elementos do array frutas" ${frutas[*]}
-
-#${!array_name[@|*]} --> expande para os valores de todos os indices do array
-echo "Esses são os índices do array frutas:" ${!frutas[*]}
-
-#${#array_name[*]} --> expande o número de  elementos do array
-echo "O array frutas tem "${#frutas[*]} "elementos"
-
-#${#variavel} --> expande o número de caracteres da variavel
-echo "A variável nome tem" ${#nome} "caracteres"
-
-#${variavel:-valor_padrão} --> expande para 'valor_padrão' se a variável não existe ou é nulo
-echo ${variavel_inexistente:-"Variável não existe, então foi substituída"}
-
-#${variavel:=valor_padrão} --> expande para 'valor_padrão' se a variável não existe e atribui 'valor_padrão' a variável
-echo ${variavel_criada:="Variável não existe, então criada com o valor padrão"}
-echo "Variável criada após o comando:" $variavel_criada
-
-#${variavel:+valor_padrão} --> expande para 'valor_padrão' se variável existe ou nada se a variável não existe
-echo ${nome:+"Messi"}
-
-#${variavel:?mensagem} --> escreve 'mensagem' na saída de erro se a variável não existe ou é nulo
-#echo ${variavel_inexistente:?"A váriavel não existe"}
-
-#${variavel^} --> Primeiro caractere em caixa alta
-echo "Primeiro caractere em caixa alta:" ${nome^}
-
-#${variavel^} --> Todo o texto em caixa alta
-echo "Todo o texto em caixa alta:" ${nome^^}
-
-#${variavel^} --> Primeiro caractere em caixa baixa
-echo "Primeiro caractere em caixa baixa:" ${nome_caixa_alta,}
-
-#${variavel^} --> Todo o texto em caixa baixa
-echo "Todo o texto em caixa baixa:" ${nome_caixa_alta,,}
-
-#${variavel#padrao} --> Apaga a string antes até a ocorrência do padrão
-echo "O endereço é:" ${endereco#https://}
-
-#${variavel##padrao} --> Apaga toda a string antes da oorrência do padrão
-echo "O nome do arquivo é:" ${endereco##*/}
-
-#${variavel%padrao} --> Apaga a string após a ocorrência do padrão
-echo "O protocolo é:" ${endereco%://*}
-
-#${variavel%%padrao} --> Apaga toda a string após a ocorrência do padrão
-echo "O protocolo é:" ${endereco%%://*}
-
-#${variavel/padrao/string} --> substitui a primeira ocorrência de 'padrão' por 'string'
-echo ${mensagem/fruta/${frutas[2]}}
-
-#${variavel//padrao/string} --> substitui todas as ocorrências de 'padrão' por 'string'
-echo ${mensagem_cifrada//e/3}

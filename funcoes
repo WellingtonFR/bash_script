@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+#----------------------------------------------------------------------------
+#Script     : Funções
+#Versão     : 1.0
+#Descrição  : Casos de uso de funções
+#Autor      : Wellington Rocha
+#Data       : 19/09/2023
+#Licença    :
+#----------------------------------------------------------------------------
+#Uso: Arquivo para estudo
+#----------------------------------------------------------------------------
+
+#entre parenteses no bash não se pode passar argumentos
+
+echo Caminho do arquivo: $0
+
+nome="Wellington"
+
+oi() {
+ local nome="Goku" #declaração de variável local
+ echo "Oi, eu sou $nome (variável local)"
+}
+
+#Recebendo parâmetros
+oi_com_parametros() {
+ echo "Oi, eu sou $1 (variável passada por parâmetro)"
+}
+
+oi
+echo
+
+oi_com_parametros $1
+
+echo
+echo "Oi, eu sou $nome (variável global)"
+echo
+
+case $2 in
+ 1) nome=Goku    ;;
+ 2) nome=Vegeta  ;;
+ 3) nome=Gohan   ;;
+ *) nome=anônimo ;;
+esac
+
+oi_com_parametros $nome
+
+exit 0

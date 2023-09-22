@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+#----------------------------------------------------------------------------
+#Script     : Troca o logo do ícone do compositor do XFCE
+#Versão     : 1.0
+#Descrição  : Alterna o estado do ícone do compositor do XFCE
+#Autor      : Wellington Rocha
+#Data       : 20/09/2023
+#Licença    :
+#----------------------------------------------------------------------------
+#Uso: Somente para estudo
+#----------------------------------------------------------------------------
+
+launcher="$HOME/.config/xfce4/panel/launcher-1/15766690174.desktop"
+
+#alterna os estados do ícone (toogle)
+[[ "$(xfconf-query -c xfwm4 -p /general/use_compositing)" = "true" ]] \
+ && status="false" \
+ || status="true"
+ 
+icon_path="Icon=$HOME/pics/icons"
+icon="composite1-$status.svg"
+
+sed -i "s|^Icon.*$|$icon_path/$iconlg" $launcher
+
+xfconf-query -c xfwm4 -p /general/use_compositin -s $status
+

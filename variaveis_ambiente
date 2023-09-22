@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+#----------------------------------------------------------------------------
+#Script     : Variáveis de ambiente
+#Versão     : 1.0
+#Descrição  : Descreve algumas variáveis de ambiente do shell do linux
+#Autor      : Wellington Rocha
+#Data       : 22/09/2023
+#Licença    :
+#----------------------------------------------------------------------------
+#Uso: Somente para estudo
+#----------------------------------------------------------------------------
+
+#Com o comando env as váriaveis são exibidas
+#Abaixo as mais usadas nos scripts
+
+HELL=/bin/bash
+SESSION_MANAGER=local/wellingtonubuntu:@/tmp/.ICE-unix/1219,unix/wellingtonubuntu:/tmp/.ICE-unix/1219
+LANGUAGE=en_US:
+LC_ADDRESS=pt_BR.UTF-8
+GNOME_SHELL_SESSION_MODE=ubuntu
+LC_NAME=pt_BR.UTF-8
+DESKTOP_SESSION=ubuntu
+LC_MONETARY=pt_BR.UTF-8e
+PWD=/home/wellington/bin
+LOGNAME=wellington
+XDG_SESSION_DESKTOP=ubuntu
+SYSTEMD_EXEC_PID=1260.mutter-Xwaylandauth.78OIB2
+HOME=/home/wellington
+USERNAME=wellington8
+LANG=en_US.UTF-8
+XDG_CURRENT_DESKTOP=ubuntu:GNOMEs
+XDG_SESSION_CLASS=user
+TERM=xterm-256color
+USER=wellington
+PATH=/home/wellington/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/wellington/bin
+GDMSESSION=ubuntu
+OLDPWD=/home/wellington
+_=/usr/bin/env
