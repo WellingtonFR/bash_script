@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+#----------------------------------------------------------------------------
+#Script     : Aliases
+#Versão     : 1.0
+#Descrição  : Aliases para comandos
+#Autor      : Wellington
+#Data       : 26/09/2023
+#Licença    :
+#----------------------------------------------------------------------------
+#Uso: Somente para estudo
+#----------------------------------------------------------------------------
+
+# Para comandos ou sequência de comandos muito utilizados é possível a
+# criação de aliases (apelidos) para facilitar o uso
+
+alias edt="tilde"
+
+# unalias exclui o apelido criado
+
+unalias edt
