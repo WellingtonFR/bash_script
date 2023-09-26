@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+#----------------------------------------------------------------------------
+#Script     : Variáveis e subprocessos
+#Versão     : 1.0
+#Descrição  : Descrição de criação de variáveis e subprocessos
+#Autor      : Wellington Rocha
+#Data       : 26/09/2023
+#Licença    :
+#----------------------------------------------------------------------------
+#Uso:
+#----------------------------------------------------------------------------
+
+teste = "test" #cria uma váriável local e atribui valor
+echo $teste #mostra o conteúdo da variável
+bash #cria um processos bash filho
+ps #mostra os dois processos
+exit #volta para o processo pai
+
+# O processo filho não herda as variáveis do processo pai exceto se for exportada antes
+
+export teste
+
+# unset destroi a variavel criada
+
+unset teste
